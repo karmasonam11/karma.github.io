@@ -1,4 +1,3 @@
-
 var PLAY = 1;
 var END = 0;
 var gameState = PLAY;
@@ -72,7 +71,7 @@ function setup() {
 
 function draw() {
   //trex.debug = true;
-   background(255);
+  background(255);
   text("Score: "+ score, 500,50);
   
   if (gameState===PLAY){
@@ -88,7 +87,7 @@ function draw() {
     if (ground.x < 0){
       ground.x = ground.width/2;
     }
-    
+  
     trex.collide(invisibleGround);
     spawnClouds();
     spawnObstacles();
@@ -135,7 +134,7 @@ function spawnClouds() {
      //assign lifetime to the variable
     cloud.lifetime = 200;
     
-    //adjust the depth 
+    //adjust the depth
     cloud.depth = trex.depth;
     trex.depth = trex.depth + 1;
     
@@ -144,6 +143,7 @@ function spawnClouds() {
   }
   
 }
+
 function spawnObstacles() {
   if(frameCount % 60 === 0) {
     var obstacle = createSprite(600,165,10,40);
